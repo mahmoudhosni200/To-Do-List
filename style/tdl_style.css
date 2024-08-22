@@ -1,0 +1,236 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+body{
+    font-family: "Nunito", sans-serif;
+}
+
+a{
+   all: unset;
+}
+
+ul li{
+    list-style: none;
+}
+
+/* ------------------------------------------------------------ */
+
+.container{
+    width: 100%;
+    min-height: 100vh;
+    background: url(../assets/back.jpg);
+    padding: 10px;
+}
+
+.todo{
+    width: 100%;
+    max-width: 540px;
+    background: rgb(255, 255, 255);
+    margin: 100px auto 20px;
+    padding: 30px 20px 50px;
+    border-radius: 7px;
+}
+.todo h2{
+    font-size: 45px;
+    color: rgb(193, 161, 2);
+    display: flex;
+    margin-bottom: 20px;
+    justify-content: center;
+}
+
+
+.row{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #edeef0;
+    border-radius: 30px;
+    padding-left: 20px;
+    margin-bottom: 25px;
+    border-bottom: 3px solid rgba(0, 0, 0, 0.831);
+}
+
+input{
+    flex: 1;
+    border: none;
+    outline: none;
+    background: transparent;
+    padding: 10px;
+    color: rgba(0, 0, 0, 0.831);
+    font-size: 20px;
+}
+
+button{
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 16px 50px;
+    background: rgba(0, 0, 0, 0.831);
+    border-radius: 30px;
+    color: #fff;
+    font-size: 16px;
+    transition: opacity 0.3s ease, box-shadow 0.3s ease;
+}
+
+button:hover{
+    opacity: 0.8;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0.8, 0.4);
+}
+
+ul li{
+    font-size: 20px;
+    padding: 12px 8px 12px 50px;
+    user-select: none;
+    cursor: pointer;
+    position: relative;
+}
+
+ul li::before{
+    content: '';
+    position: absolute;
+    height: 23px;
+    width: 23px;
+    border-radius: 50%;
+    background: url(../assets/unchecked.png);
+    background-size: cover;
+    background-position: center;
+    top: 12px;
+    left: 8px;
+}
+
+ul li.checked{
+    color: rgb(17, 255, 0);
+    text-decoration: line-through;
+}
+
+ul li.checked::before{
+    background-image: url(../assets/checked.png);
+}
+
+ul li span{
+    position: absolute;
+    right: 0;
+    top: 5px;
+    width: 30px;
+    height: 30px;
+    font-size: 25px;
+    color: rgb(193, 161, 2);
+    line-height: 30px;
+    text-align: center;
+    border-radius: 30px; 
+    transition:  0.5s ease;
+}
+
+ul li span:hover{
+    background: #3f3f3f;
+}
+
+
+
+/* Tablet */
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    .todo {
+        margin: 50px auto 20px;
+        padding: 20px 15px 40px;
+    }
+
+    .todo h2 {
+        font-size: 35px;
+    }
+
+    .row {
+        flex-direction: column;
+        padding: 15px;
+        text-align: center;
+    }
+
+    button {
+        padding: 14px 40px;
+        font-size: 14px;
+    }
+
+    ul li {
+        font-size: 18px;
+        padding: 10px 8px 10px 40px;
+    }
+
+    ul li span {
+        top: 5px;
+        right: 10px;
+    }
+}
+
+/* Mobile screens */
+@media (max-width: 480px) {
+    .todo {
+        margin: 30px auto 10px;
+        padding: 15px 10px 30px;
+    }
+
+    .todo h2 {
+        font-size: 30px;
+    }
+
+    .row {
+        padding: 10px;
+    }
+
+    button {
+        padding: 12px 30px;
+        font-size: 13px;
+    }
+
+    ul li {
+        font-size: 16px;
+        padding: 8px 8px 8px 35px;
+    }
+
+    ul li span {
+        width: 25px;
+        height: 25px;
+        font-size: 20px;
+    }
+}
+
+/* Small mobile  */
+@media (max-width: 320px) {
+    .todo {
+        margin: 20px auto 10px;
+        padding: 10px 5px 20px;
+    }
+
+    .todo h2 {
+        font-size: 25px;
+    }
+
+    .row {
+        padding: 8px;
+    }
+
+    button {
+        padding: 10px 20px;
+        font-size: 12px;
+    }
+
+    ul li {
+        font-size: 14px;
+        padding: 6px 8px 6px 30px;
+    }
+
+    ul li span {
+        width: 20px;
+        height: 20px;
+        font-size: 18px;
+    }
+}
